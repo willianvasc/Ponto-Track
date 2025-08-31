@@ -90,6 +90,8 @@ A API possui documentação interativa gerada com Swagger, que permite testar en
 * Permitir testes rápidos sem precisar de um cliente externo.
 
 Acesse a documentação Swagger em: [http://weather.lolfy.com.br/swagger/index.html](http://weather.lolfy.com.br/swagger/index.html)
+Para testar qualquer endpoint basta acessar a documentação do [swagger](http://weather.lolfy.com.br/swagger/index.html) e clicar em "try it out", conforme mostra a imagem abaixo
+<img width="1493" height="878" alt="image" src="https://github.com/user-attachments/assets/3f19dbb3-09b2-468e-a564-53d5d0d519f0" />
 
 ## Observações
 
