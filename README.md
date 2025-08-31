@@ -50,7 +50,7 @@ Este projeto é uma API simples em PHP para consulta de informações meteoroló
   - `token`: Token de autenticação definido no `.env`.
 - **Exemplo:**
    ```sh
-   curl -X POST -d "token=seu_token_aqui" http://localhost/subscribeIp
+   curl -X POST -d "token=seu_token_aqui" http://weather.lolfy.com.br/subscribeIp
    ```
 
 ## Observações

@@ -2,8 +2,8 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Weather API",
-    "version": "1.0.0",
-    "description": "API que retorna previsão do tempo para uma cidade."
+    "version": "1.1.0",
+    "description": "API que retorna previsão do tempo para uma cidade e permite cadastro de IPs autorizados."
   },
   "servers": [
     {
@@ -61,7 +61,34 @@
             }
           },
           "400": { "description": "Parâmetro obrigatório ausente" },
+          "403": { "description": "IP não autorizado" },
           "404": { "description": "Cidade não encontrada" },
+          "500": { "description": "Erro interno do servidor" }
+        }
+      }
+    },
+    "/subscribeIp": {
+      "post": {
+        "summary": "Cadastra um IP autorizado",
+        "description": "Permite cadastrar o IP do cliente para ter acesso ao endpoint /weather. Requer token OAuth.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": { "type": "string", "description": "Token OAuth", "example": "seu_token_aqui" }
+                },
+                "required": ["token"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "IP cadastrado com sucesso" },
+          "401": { "description": "Não autorizado / Token inválido" },
+          "405": { "description": "Método não permitido (usar POST)" },
           "500": { "description": "Erro interno do servidor" }
         }
       }
