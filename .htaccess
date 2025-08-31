@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /prova/
+
+# Ignora arquivos e pastas reais
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Ignora o diretório swagger
+RewriteCond %{REQUEST_URI} !^/prova/swagger/
+
+# Redireciona tudo para index.php
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
