@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Weather API",
+    "version": "1.0.0",
+    "description": "API que retorna previsão do tempo para uma cidade."
+  },
+  "servers": [
+    {
+      "url": "http://localhost/prova"
+    }
+  ],
+  "paths": {
+    "/weather": {
+      "get": {
+        "summary": "Consulta a previsão do tempo",
+        "description": "Retorna a temperatura e dados meteorológicos para a cidade informada.",
+        "parameters": [
+          {
+            "name": "cidade",
+            "in": "query",
+            "required": true,
+            "description": "Nome da cidade, ex: São Paulo",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "unidade",
+            "in": "query",
+            "required": false,
+            "description": "Unidade de temperatura (c = Celsius, f = Fahrenheit). Padrão: c",
+            "schema": {
+              "type": "string",
+              "enum": ["c", "f"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": { "type": "boolean", "example": true },
+                    "cidade": { "type": "string", "example": "São Paulo" },
+                    "estado": { "type": "string", "example": "SP" },
+                    "pais": { "type": "string", "example": "BR" },
+                    "lat": { "type": "number", "example": -23.55 },
+                    "lon": { "type": "number", "example": -46.63 },
+                    "temperatura": { "type": "number", "example": 25 },
+                    "feels_like": { "type": "number", "example": 27 },
+                    "umidade": { "type": "integer", "example": 60 },
+                    "descricao": { "type": "string", "example": "céu limpo" },
+                    "unidade": { "type": "string", "example": "C" }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "description": "Parâmetro obrigatório ausente" },
+          "404": { "description": "Cidade não encontrada" },
+          "500": { "description": "Erro interno do servidor" }
+        }
+      }
+    }
+  }
+}
