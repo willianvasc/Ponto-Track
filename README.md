@@ -98,11 +98,3 @@ Para testar qualquer endpoint basta acessar a documentação do [swagger](http:/
 * O projeto utiliza a biblioteca [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv) para gerenciamento de variáveis de ambiente.
 * Certifique-se de que o servidor web tenha permissão de escrita no arquivo `ips.json`.
 
-## Licença
-
-Este projeto está sob a licença MIT.
-
-```
-
-Se você quiser, posso gerar também **uma versão resumida do README** ideal para exibir no GitHub, destacando apenas o Swagger e exemplos rápidos de uso. Isso deixa mais limpo e direto. Quer que eu faça?
-```
